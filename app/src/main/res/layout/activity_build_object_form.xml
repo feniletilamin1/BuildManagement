@@ -1,0 +1,267 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarFormObjects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_main"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Название:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectNameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints="name"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите название"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Клиент:"
+                android:textSize="16dp"
+                android:id="@+id/objectFormClientTextView"/>
+
+            <Spinner
+                android:id="@+id/clientsSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Категория: "
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectCategoryEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите категорию"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Прораб: "
+                android:textSize="16dp"
+                android:id="@+id/objectFormEmployeeTextView"/>
+
+            <Spinner
+                android:id="@+id/employeeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Дата начала работ:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectStartDateEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите дату начала работ"
+                android:inputType="date"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Дата окончания работ:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectEndDateEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите дату окончания работ"
+                android:inputType="date"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Телефон:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectPhoneEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите телефон"
+                android:inputType="phone"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Стоимость работ:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectPriceEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите стоимость"
+                android:inputType="numberDecimal"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Индекс:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectIndexEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите индекс"
+                android:inputType="number"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Область:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectRegionEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите область"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Город:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectCityEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите город"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Улица:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectStreetEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите улицу"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Дом:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectHomeEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите дом"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Квартира:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/objectFlatEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите квартиру"
+                android:inputType="number"
+                android:textColorLink="@color/blue_main" />
+
+            <Button
+                android:id="@+id/submitObjectFormButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить объект" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

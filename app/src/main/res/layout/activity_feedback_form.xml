@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/formClientLayout" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarAddFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_main"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Оценка:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/feedbackScoreEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints="name"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Значение от 1 до 5"
+                android:inputType="number"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Текст отзыва:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/feedbackTextEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите текст отзыва"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <Button
+                android:id="@+id/submitFeedbackFormButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить отзыв" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

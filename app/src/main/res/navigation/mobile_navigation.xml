@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_workers">
+
+    <fragment
+        android:id="@+id/nav_workers"
+        android:name="com.example.buildmanagement.ui.EmployeesFragment"
+        android:label="@string/menu_workers"
+        tools:layout="@layout/fragment_workers" />
+
+    <fragment
+        android:id="@+id/nav_clients"
+        android:name="com.example.buildmanagement.ui.ClientsFragment"
+        android:label="@string/menu_clients"
+        tools:layout="@layout/fragment_clients" />
+
+    <fragment
+        android:id="@+id/nav_objects"
+        android:name="com.example.buildmanagement.ui.ObjectsFragment"
+        android:label="@string/menu_objects"
+        tools:layout="@layout/fragment_objects" />
+
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.example.buildmanagement.ui.OrdersFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_orders" />
+
+</navigation>

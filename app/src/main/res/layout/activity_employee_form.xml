@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/formClientLayout" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_main"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/employeeFormImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Фамилия:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeeLastNameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:autofillHints="name"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите фамилию"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Имя:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeeFirstNameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите имя"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Отчество:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeeMiddleNameEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите отчество"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Телефон:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeePhoneEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите телефон"
+                android:inputType="phone"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Специальность:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeeSpecialityEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите специальность"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Должность:"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/employeePostEditTextView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/blue_main"
+                android:hint="Введите должность"
+                android:inputType="text"
+                android:textColorLink="@color/blue_main" />
+
+            <Button
+                android:id="@+id/submitEmployeeFormButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить рабочего" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
