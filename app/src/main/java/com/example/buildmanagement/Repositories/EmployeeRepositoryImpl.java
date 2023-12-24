@@ -10,17 +10,9 @@ import com.example.buildmanagement.Models.Employee;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Реализация репозитория сотрудников для доступа к данным.
- */
 public class EmployeeRepositoryImpl implements EmployeeRepository {
     final SQLiteDatabase database = DbHelper.database;
 
-    /**
-     * Возвращает список всех сотрудников.
-     *
-     * @return список всех сотрудников
-     */
     @Override
     public List<Employee> findAll() {
         List<Employee> employees = new ArrayList<>();
@@ -55,12 +47,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return employees;
     }
 
-    /**
-     * Возвращает сотрудника по указанному идентификатору.
-     *
-     * @param id идентификатор сотрудника
-     * @return сотрудник
-     */
     @Override
     public Employee findOneById(int id) {
         Employee employee = null;
@@ -83,11 +69,11 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             int postIndex = cursor.getColumnIndex("post");
             int photoIndex = cursor.getColumnIndex("photo");
 
-            employee = (new Employee(cursor.getInt(idIndex),
+            employee = new Employee(cursor.getInt(idIndex),
                     cursor.getInt(buildObjectIndex), cursor.getString(firstNameIndex),
                     cursor.getString(lastNameIndex), cursor.getString(middleNameIndex),
                     cursor.getString(phoneIndex), cursor.getString(workerStatusIndex),
-                    cursor.getString(specialityIndex), cursor.getString(postIndex), cursor.getString(photoIndex)));
+                    cursor.getString(specialityIndex), cursor.getString(postIndex), cursor.getString(photoIndex));
         }
 
         cursor.close();
@@ -95,12 +81,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return employee;
     }
 
-    /**
-     * Сохраняет сотрудника в базе данных.
-     *
-     * @param employee сотрудник для сохранения
-     * @return количество затронутых строк
-     */
     @Override
     public int save(Employee employee) {;
 
@@ -111,12 +91,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return newId;
     }
 
-    /**
-     * Обновляет данные сотрудника в базе данных.
-     *
-     * @param employee сотрудник для обновления
-     * @return количество обновленных строк
-     */
     @Override
     public int update(Employee employee) {
         int countUpdatedRows;
@@ -128,12 +102,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return countUpdatedRows;
     }
 
-    /**
-     * Удаляет сотрудника из базы данных по указанному идентификатору.
-     *
-     * @param id идентификатор сотрудника для удаления
-     * @return количество удаленных строк
-     */
     @Override
     public int delete(int id) {
         int countDeletedRows;
@@ -165,11 +133,14 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             int postIndex = cursor.getColumnIndex("post");
             int photoIndex = cursor.getColumnIndex("photo");
 
-            employeeList.add(new Employee(cursor.getInt(idIndex),
-                    cursor.getInt(buildObjectIndex), cursor.getString(firstNameIndex),
-                    cursor.getString(lastNameIndex), cursor.getString(middleNameIndex),
-                    cursor.getString(phoneIndex), cursor.getString(workerStatusIndex),
-                    cursor.getString(specialityIndex), cursor.getString(postIndex), cursor.getString(photoIndex)));
+            do {
+                employeeList.add(new Employee(cursor.getInt(idIndex),
+                        cursor.getInt(buildObjectIndex), cursor.getString(firstNameIndex),
+                        cursor.getString(lastNameIndex), cursor.getString(middleNameIndex),
+                        cursor.getString(phoneIndex), cursor.getString(workerStatusIndex),
+                        cursor.getString(specialityIndex), cursor.getString(postIndex), cursor.getString(photoIndex)));
+
+            } while (cursor.moveToNext());
         }
 
         cursor.close();
@@ -177,12 +148,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return employeeList;
     }
 
-    /**
-     * Получение списка сотрудников объекта строительства.
-     *
-     * @param objectId Идентификатор объекта строительства.
-     * @return Список сотрудников.
-     */
     public List<Employee> getObjectEmployees(int objectId) {
         List<Employee> employees = new ArrayList<>();
 
@@ -220,18 +185,13 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         return employees;
     }
 
-    /**
-     * Получение списка свободных сотрудников.
-     *
-     * @return Список свободных сотрудников.
-     */
     public List<Employee> getFreeEmployees() {
         List<Employee> employees = new ArrayList<>();
 
         Cursor cursor = database.query("employees",
                 null,
-                "workerStatus = ?",
-                new String[] {"Свободен"},
+                "workerStatus = ? AND post = ?",
+                new String[] {"Свободен", "Рабочий"},
                 null, null, null);
 
         if (cursor.moveToFirst()) {

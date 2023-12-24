@@ -12,11 +12,7 @@ import java.util.List;
 
 public class ClientRepositoryImpl implements ClientRepository {
     final SQLiteDatabase database = DbHelper.database;
-    /**
-     * Возвращает список всех клиентов.
-     *
-     * @return список всех клиентов
-     */
+
     @Override
     public List<Client> findAll() {
         List<Client> clients = new ArrayList<>();
@@ -44,12 +40,6 @@ public class ClientRepositoryImpl implements ClientRepository {
         return clients;
     }
 
-    /**
-     * Возвращает клиента по указанному идентификатору.
-     *
-     * @param id идентификатор клиента
-     * @return клиент
-     */
     @Override
     public Client findOneById(int id) {
         Client client = null;
@@ -78,12 +68,6 @@ public class ClientRepositoryImpl implements ClientRepository {
         return client;
     }
 
-    /**
-     * Сохраняет клиента в базе данных.
-     *
-     * @param client клиент для сохранения
-     * @return количество затронутых строк
-     */
     @Override
     public int save(Client client) {
         ContentValues contentValues = fillContentValue(client);
@@ -93,12 +77,6 @@ public class ClientRepositoryImpl implements ClientRepository {
         return newId;
     }
 
-    /**
-     * Обновляет данные клиента в базе данных.
-     *
-     * @param client клиент для обновления
-     * @return количество обновленных строк
-     */
     @Override
     public int update(Client client) {
         int countUpdatedRows;
@@ -111,12 +89,6 @@ public class ClientRepositoryImpl implements ClientRepository {
         return countUpdatedRows;
     }
 
-    /**
-     * Удаляет клиента из базы данных по указанному идентификатору.
-     *
-     * @param id идентификатор клиента для удаления
-     * @return количество удаленных строк
-     */
     @Override
     public int delete(int id) {
         int countDeletedRows;

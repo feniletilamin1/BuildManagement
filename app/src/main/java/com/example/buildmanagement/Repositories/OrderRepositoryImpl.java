@@ -15,19 +15,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-
-/**
- * Реализация интерфейса OrderRepository для доступа к данным заказов.
- */
 public class OrderRepositoryImpl implements OrderRepository {
 
     final SQLiteDatabase database = DbHelper.database;
 
-    /**
-     * Возвращает список всех заказов.
-     *
-     * @return список заказов
-     */
     @Override
     public List<Order> findAll() {
         List<Order> orders = new ArrayList<>();
@@ -51,12 +42,6 @@ public class OrderRepositoryImpl implements OrderRepository {
         return orders;
     }
 
-    /**
-     * Сохраняет заказ в базе данных.
-     *
-     * @param order заказ для сохранения
-     * @return количество сохраненных строк
-     */
     @Override
     public int save(Order order) {
         ContentValues contentValues = fillContentValue(order);
@@ -66,12 +51,6 @@ public class OrderRepositoryImpl implements OrderRepository {
         return newId;
     }
 
-    /**
-     * Обновляет данные заказа в базе данных.
-     *
-     * @param order заказ для обновления
-     * @return количество обновленных строк
-     */
     @Override
     public int update(Order order) {
         int countUpdatedRows;
@@ -83,12 +62,6 @@ public class OrderRepositoryImpl implements OrderRepository {
         return countUpdatedRows;
     }
 
-    /**
-     * Удаляет заказ из базы данных по указанному идентификатору.
-     *
-     * @param id идентификатор заказа для удаления
-     * @return количество удаленных строк
-     */
     @Override
     public int delete(int id) {
         int countDeletedRows;
@@ -98,12 +71,6 @@ public class OrderRepositoryImpl implements OrderRepository {
         return countDeletedRows;
     }
 
-    /**
-     * Возвращает заказ по указанному идентификатору.
-     *
-     * @param id идентификатор заказа
-     * @return заказ
-     */
     @Override
     public Order findOneById(int id) {
         Order order = null;

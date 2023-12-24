@@ -192,15 +192,15 @@ public class BuildObjectFormActivity extends AppCompatActivity {
             String[] employeeArr = new String[0];
 
             if(action.equals("ADD")) {
-                clientArr = clientsSpinner.getSelectedItem().toString().split("");
-                employeeArr = employeeSpinner.getSelectedItem().toString().split("");
+                clientArr = clientsSpinner.getSelectedItem().toString().split(" ");
+                employeeArr = employeeSpinner.getSelectedItem().toString().split(" ");
             }
 
             if(validateData(action, name, category, startDate, endDate, phone, price, index, region, city, street, home)) {
                 BuildObject buildObject = new BuildObject(DateFormatter.stringToDateFromPicker(startDate),
                         DateFormatter.stringToDateFromPicker(endDate), "В работе", name, category,
                         BigDecimal.valueOf(Double.parseDouble(price)), phone, Integer.parseInt(index), region,
-                        city, home, street, null,
+                        city, street, home, null,
                         null, 0, 0);
 
                 if(!flat.equals("")) {

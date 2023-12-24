@@ -118,7 +118,7 @@ public class ObjectsDetailsActivity extends AppCompatActivity {
         indexTV.setText("Индекс: " + buildObject.getIndexRegion());
         cityTV.setText("Город: " + buildObject.getCity());
         streetTV.setText("Улица: " + buildObject.getStreet());
-        homeTV.setText("Дом: " + buildObject.getFlat());
+        homeTV.setText("Дом: " + buildObject.getHome());
 
         if(buildObject.getFlat() != 0) {
             flatTV.setText("Квартира: " + buildObject.getFlat());
